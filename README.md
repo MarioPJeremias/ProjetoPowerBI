@@ -40,7 +40,7 @@ Oferecer uma visão analítica e visual das operações globais, auxiliando na *
 
 ## 📸 Captura do Dashboard
 
-![Dashboard Power BI](./Visual mapa 1.png)
+![Dashboard Power BI](./VisualMapa.png)
 
 ## 🚀 Como Visualizar
 
