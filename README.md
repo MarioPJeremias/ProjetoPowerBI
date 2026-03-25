@@ -7,7 +7,7 @@ Este projeto em **Power BI** tem como objetivo analisar o desempenho de **vendas
 O dashboard apresenta visualizações interativas que permitem compreender:
 - A **proporção de lucro por segmento** (GOVERNMENT, SMALL BUSINESS, CHANNEL PARTNERS, MIDMARKET e ENTERPRISE);
 - A **distribuição de vendas e unidades vendidas por país**;
-- A **análise de lucro global por região**.
+- A **análise de lucro global por região**....
 
 ## 🧩 Visualizações Principais
 
