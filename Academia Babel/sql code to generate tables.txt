@@ -1,0 +1,91 @@
+CREATE TABLE Funcionários 
+( 
+ Id_funcionario INT PRIMARY KEY,  
+ Nome VARCHAR(n) NOT NULL,  
+ Sobrenome VARCHAR(n) NOT NULL,  
+ Data de Nascimento DATE,  
+ Genero CHAR(n) NOT NULL,  
+ Estado VARCHAR(n) NOT NULL,  
+); 
+
+CREATE TABLE Alunos 
+( 
+ Id_aluno INT PRIMARY KEY,  
+ Nome VARCHAR(n) NOT NULL,  
+ Sobrenome VARCHAR(n),  
+ Data de Nascimento DATE,  
+ Genero CHAR(n) NOT NULL,  
+ Data 1 Inscricao DATE,  
+ Estado VARCHAR(n) NOT NULL,  
+ Curso concluido CHAR(n),  
+); 
+
+CREATE TABLE Receitas 
+( 
+ Id_receita INT PRIMARY KEY,  
+ Data DATE,  
+ Categoria VARCHAR(n),  
+ Sub-categoria VARCHAR(n),  
+ qtde INT,  
+ valor FLOAT,  
+ Descriçao INT,  
+); 
+
+CREATE TABLE Cursos 
+( 
+ Id_curso INT PRIMARY KEY,  
+ Nome do Curso VARCHAR(n) NOT NULL,  
+ Estado do Curso VARCHAR(n) NOT NULL,  
+); 
+
+CREATE TABLE Despesas 
+( 
+ Id_despesa INT PRIMARY KEY,  
+ Data DATE,  
+ Categoria VARCHAR(n),  
+ Sub-categoria VARCHAR(n),  
+ qtde INT,  
+ valor FLOAT,  
+ Descricao VARCHAR(n),  
+); 
+
+CREATE TABLE Ordem 
+( 
+ Id_ordem INT PRIMARY KEY,  
+ idCursos INT,  
+ idCursos INT,  
+ idCursos INT,  
+ idAlunos INT,  
+ idReceitas INT,  
+ idDespesas INT,  
+ idFuncionários INT,  
+ Data DATE,  
+ Categoria VARCHAR(n),  
+ Sub-Categoria VARCHAR(n),  
+ qtde INT NOT NULL,  
+ valor INT NOT NULL,  
+ Descrição VARCHAR(n),  
+); 
+
+CREATE TABLE Info_curso 
+( 
+ Id_info_curso INT PRIMARY KEY,  
+ idAlunos INT,  
+ idCursos INT,  
+ idFuncionários INT,  
+ Data de inicio DATE,  
+ Date de fim DATE,  
+ Num alunos inicio INT,  
+ Num alunos fim INT,  
+); 
+
+ALTER TABLE Ordem ADD FOREIGN KEY(idCursos) REFERENCES Cursos (idCursos)
+ALTER TABLE Ordem ADD FOREIGN KEY(idCursos) REFERENCES Cursos (idCursos)
+ALTER TABLE Ordem ADD FOREIGN KEY(idCursos) REFERENCES Cursos (idCursos)
+ALTER TABLE Ordem ADD FOREIGN KEY(idAlunos) REFERENCES Alunos (idAlunos)
+ALTER TABLE Ordem ADD FOREIGN KEY(idReceitas) REFERENCES Receitas (idReceitas)
+ALTER TABLE Ordem ADD FOREIGN KEY(idDespesas) REFERENCES Despesas (idDespesas)
+ALTER TABLE Ordem ADD FOREIGN KEY(idFuncionários) REFERENCES Funcionários (idFuncionários)
+ALTER TABLE Info_curso ADD FOREIGN KEY(idAlunos) REFERENCES Alunos (idAlunos)
+ALTER TABLE Info_curso ADD FOREIGN KEY(idCursos) REFERENCES Cursos (idCursos)
+ALTER TABLE Info_curso ADD FOREIGN KEY(idFuncionários) REFERENCES Funcionários (idFuncionários)

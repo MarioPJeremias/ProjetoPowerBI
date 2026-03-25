@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - DATABRICKS_HOST=${DATABRICKS_HOST}
+      - DATABRICKS_TOKEN=${DATABRICKS_TOKEN}
+      - DATABRICKS_HTTP_PATH=${DATABRICKS_HTTP_PATH}
+      - DATABRICKS_CATALOG=${DATABRICKS_CATALOG:-main}
+      - DATABRICKS_SCHEMA=${DATABRICKS_SCHEMA:-academia_babel}
+      - PORT=5000
+      - CORS_ORIGIN=http://localhost:3000
+      - NODE_ENV=development
+    volumes:
+      - ./backend/src:/app/src
+    depends_on:
+      - databricks
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - VITE_API_URL=http://localhost:5000
+    volumes:
+      - ./frontend/src:/app/src
+    depends_on:
+      - backend
+
+  # Note: This is a placeholder for documentation
+  # Databricks is a cloud service and doesn't run in Docker
+  databricks:
+    image: alpine:latest
+    command: echo "Databricks SQL warehouse is cloud-based. Configure connection via .env file"
