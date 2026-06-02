@@ -1,0 +1,102 @@
+table DimCustomer
+	lineageTag: b0ad40a3-c727-46bb-8594-e699cc79c7af
+	sourceLineageTag: [dbo].[DimCustomer]
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 7d474def-5a86-4597-ac12-10d5a084fa3f
+		sourceLineageTag: CustomerKey
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerAltKey
+		dataType: string
+		lineageTag: d8e9461a-2436-4e99-ba60-7b5c132f9780
+		sourceLineageTag: CustomerAltKey
+		summarizeBy: none
+		sourceColumn: CustomerAltKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: 9a6c92e9-cb99-4f4f-89eb-d219c09c069c
+		sourceLineageTag: Title
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column FirstName
+		dataType: string
+		lineageTag: 901bd6fd-6ae6-4378-ad99-aeada5753ca5
+		sourceLineageTag: FirstName
+		summarizeBy: none
+		sourceColumn: FirstName
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastName
+		dataType: string
+		lineageTag: 79ba47a6-81d9-4b9f-a996-9444db69331d
+		sourceLineageTag: LastName
+		summarizeBy: none
+		sourceColumn: LastName
+
+		annotation SummarizationSetBy = Automatic
+
+	column AddressLine1
+		dataType: string
+		lineageTag: 0991b4f5-c156-496a-ab63-53100d98777f
+		sourceLineageTag: AddressLine1
+		summarizeBy: none
+		sourceColumn: AddressLine1
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 29bcdd74-f04f-4408-8305-014fd52bcd78
+		sourceLineageTag: City
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column StateProvince
+		dataType: string
+		lineageTag: f3971a06-ce7b-4a18-8ebf-c55c78fe2249
+		sourceLineageTag: StateProvince
+		summarizeBy: none
+		sourceColumn: StateProvince
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryRegion
+		dataType: string
+		lineageTag: 7c0c4fa8-7303-4041-aa9a-3c3f2076c21c
+		sourceLineageTag: CountryRegion
+		summarizeBy: none
+		sourceColumn: CountryRegion
+
+		annotation SummarizationSetBy = Automatic
+
+	column PostalCode
+		dataType: string
+		lineageTag: 70205765-0140-478b-b516-4da96de03318
+		sourceLineageTag: PostalCode
+		summarizeBy: none
+		sourceColumn: PostalCode
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimCustomer = entity
+		mode: directLake
+		source
+			entityName: DimCustomer
+			schemaName: dbo
+			expressionSource: 'DirectLake - DW_Exerc'
+
